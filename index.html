@@ -1,0 +1,1526 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Al Madina Biryani House 🍛 | Authentic Karachi Biryani & Desi Cuisine</title>
+  
+  <!-- SEO & Meta Tags -->
+  <meta name="description" content="Welcome to Al Madina Biryani House in Karachi, Pakistan. Taste authentic Karachi Chicken & Beef Biryani, Pulao, Kebabs, Karahi, and traditional desserts." />
+  <meta property="og:title" content="Al Madina Biryani House 🍛 | Karachi, Pakistan" />
+  <meta property="og:description" content="Authentic aroma, spiced perfection, and unforgettable flavor. Order Karachi's favorite biryani." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍛</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       CSS VARIABLES & BASE STYLES
+       ========================================== */
+    :root {
+      --bg-dark: #0f0a07;
+      --bg-card: #1a120c;
+      --bg-card-hover: #261b12;
+      --accent-saffron: #e65100;
+      --accent-saffron-hover: #c74400;
+      --accent-gold: #f59e0b;
+      --accent-red: #b91c1c;
+      --text-main: #fcf8f2;
+      --text-muted: #bcaaa4;
+      --cream: #fbf0d9;
+      --border-color: #362519;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --transition-fast: 0.25s ease;
+      --transition-normal: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image: radial-gradient(rgba(245, 158, 11, 0.03) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      border: none;
+      outline: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .section-padding {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      letter-spacing: 0.5px;
+      color: var(--cream);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px auto;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: var(--transition-normal);
+      text-transform: uppercase;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-saffron), var(--accent-gold));
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(230, 81, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.45);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--cream);
+      border: 2px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================
+       NAVBAR
+       ========================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 22px 0;
+      transition: var(--transition-normal);
+    }
+
+    .navbar.scrolled {
+      background: rgba(15, 10, 7, 0.94);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      color: var(--accent-gold);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent-gold);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: var(--transition-fast);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--cream);
+      border-radius: 2px;
+      transition: var(--transition-fast);
+    }
+
+    /* Mobile Hamburger Active */
+    .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    @media (max-width: 992px) {
+      .hamburger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 380px;
+        height: 100vh;
+        background: var(--bg-card);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        transition: var(--transition-normal);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+      }
+      .nav-links.active { right: 0; }
+      .nav-cta { display: none; }
+    }
+
+    /* ==========================================
+       HERO SECTION
+       ========================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 130px;
+      padding-bottom: 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 5.5vw, 4.8rem);
+      line-height: 1.08;
+      margin-bottom: 24px;
+      color: var(--cream);
+    }
+
+    .hero-content h1 span {
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(230, 81, 0, 0.25);
+      border: 2px solid var(--border-color);
+      transition: var(--transition-normal);
+    }
+
+    .hero-img:hover {
+      transform: scale(1.02);
+      border-color: var(--accent-gold);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 16px 24px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge-icon {
+      font-size: 2rem;
+    }
+
+    .hero-badge-text h4 {
+      font-weight: 700;
+      color: var(--cream);
+      font-size: 0.95rem;
+    }
+
+    .hero-badge-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================
+       MENU SECTION & FILTERS
+       ========================================== */
+    .filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: 30px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--accent-saffron);
+      color: #fff;
+      border-color: var(--accent-saffron);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .menu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-gold);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-img-wrap {
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .menu-card:hover .card-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      width: 100%;
+      padding: 12px;
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent-gold);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      text-align: center;
+    }
+
+    .menu-card:hover .card-btn {
+      background: var(--accent-saffron);
+      color: #fff;
+      border-color: var(--accent-saffron);
+    }
+
+    /* ==========================================
+       SPECIAL FEATURES
+       ========================================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px 24px;
+      text-align: center;
+      transition: var(--transition-normal);
+    }
+
+    .feature-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-6px);
+    }
+
+    .feature-icon {
+      font-size: 2.8rem;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .feature-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================
+       INTERACTIVE BIRYANI PAIRING SELECTOR
+       ========================================== */
+    .pairing-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .pairing-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pairing-opt {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .pairing-opt:hover, .pairing-opt.active {
+      border-color: var(--accent-gold);
+      background: var(--bg-card-hover);
+    }
+
+    .pairing-opt h4 {
+      color: var(--cream);
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .pairing-opt p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .pairing-preview {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      height: 380px;
+    }
+
+    .pairing-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-normal);
+    }
+
+    /* ==========================================
+       GALLERY & LIGHTBOX
+       ========================================== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      height: 250px;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      border: 1px solid var(--border-color);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 10, 7, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: var(--cream);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox-img {
+      max-width: 85%;
+      max-height: 80vh;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: 1px solid var(--border-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+    }
+
+    .lightbox-btn:hover {
+      background: var(--accent-saffron);
+      border-color: var(--accent-saffron);
+    }
+
+    .lightbox-close { top: 30px; right: 30px; }
+    .lightbox-prev { left: 30px; }
+    .lightbox-next { right: 30px; }
+
+    /* ==========================================
+       FAQ ACCORDION
+       ========================================== */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cream);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-toggle {
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding-bottom: 20px;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* ==========================================
+       CONTACT & FORM
+       ========================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-card {
+      margin-bottom: 24px;
+    }
+
+    .contact-card h4 {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .contact-card p, .contact-card a {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .contact-card a:hover {
+      color: var(--accent-gold);
+    }
+
+    .contact-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 40px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+    }
+
+    .form-control:focus {
+      border-color: var(--accent-gold);
+      background: rgba(245, 158, 11, 0.05);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-alert {
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+
+    .form-alert.success {
+      background: rgba(46, 125, 50, 0.2);
+      border: 1px solid #2e7d32;
+      color: #81c784;
+      display: block;
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .footer {
+      background: #080503;
+      border-top: 1px solid var(--border-color);
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+      color: var(--text-muted);
+      margin-top: 12px;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Back To Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent-saffron);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition-normal);
+      z-index: 999;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* ==========================================
+       RESPONSIVE DESIGN
+       ========================================== */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content p { margin: 0 auto 36px auto; }
+      .hero-actions { justify-content: center; }
+      .pairing-box { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 678px) {
+      .section-padding { padding: 60px 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .btn { width: 100%; }
+      .pairing-box, .contact-info, .contact-form { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">AL MADINA <span>BIRYANI</span> 🍛</a>
+      
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#pairings">Pairings</a></li>
+        <li><a href="#experience">Why Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="https://wa.me/923072994829" target="_blank" class="btn btn-primary nav-cta">Order / WhatsApp</a>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="section-subtitle">Karachi's Favorite Biryani</span>
+        <h1>Authentic Aroma.<br><span>Spiced Perfection.</span></h1>
+        <p>Experience true Karachi Biryani made with long-grain basmati rice, tender seasoned meats, fragrant spices, and golden potatoes cooked to perfection.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary">Explore Menu</a>
+          <a href="https://wa.me/923072994829" target="_blank" class="btn btn-secondary">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper reveal">
+        <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1000&q=80" alt="Authentic Karachi Biryani" class="hero-img" />
+        <div class="hero-badge">
+          <span class="hero-badge-icon">🍛</span>
+          <div class="hero-badge-text">
+            <h4>Traditional Deg Recipe</h4>
+            <p>Rich Spices & Long Grain Basmati</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="section-padding" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Our Specialities</span>
+        <h2 class="section-title">OUR SPECIAL MENU</h2>
+        <p style="color: var(--text-muted);">Handcrafted recipes using signature spice blends, fresh ingredients, and slow-cooked perfection.</p>
+      </div>
+
+      <!-- Menu Category Filter -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Specials</button>
+        <button class="filter-btn" data-filter="biryani">Biryani</button>
+        <button class="filter-btn" data-filter="pulao">Pulao</button>
+        <button class="filter-btn" data-filter="bbq">Kebabs & Karahi</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Item 1 -->
+        <div class="menu-card reveal" data-category="biryani">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Karachi Special Chicken Biryani" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Special Chicken Biryani</h3>
+            <p class="card-desc">Juicy chicken piece cooked with aromatic saffron basmati rice, caramelized onions, and spiced potato.</p>
+            <button class="card-btn">Order Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="menu-card reveal" data-category="biryani">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=600&q=80" alt="Beef Nalli Biryani" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Beef Degi Biryani</h3>
+            <p class="card-desc">Tender beef cuts slow-infused in traditional deg spices layered with fragrant rice.</p>
+            <button class="card-btn">Order Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="menu-card reveal" data-category="pulao">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1671048116663-eda1518a169b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fFNwZWNpYWwlMjBCZWVmJTIwWWFraG5pJTIwUHVsYW98ZW58MHx8MHx8fDA%3D" alt="Beef Yakhni Pulao" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Special Beef Yakhni Pulao</h3>
+            <p class="card-desc">Rich bone broth infused basmati rice served with succulent tender beef chunks.</p>
+            <button class="card-btn">Order Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="menu-card reveal" data-category="bbq">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80" alt="Seekh Kebab" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Flame Grilled Seekh Kebab</h3>
+            <p class="card-desc">Minced meat blended with green chilies, herbs, and aromatic ground spices grilled on skewers.</p>
+            <button class="card-btn">Order Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="menu-card reveal" data-category="bbq">
+          <div class="card-img-wrap">
+            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Chicken Karahi" />
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Desi Chicken Karahi</h3>
+            <p class="card-desc">Cooked in a wok with fresh tomatoes, ginger juliennes, green chilies, and pure ghee glaze.</p>
+            <button class="card-btn">Order Inquiry</button>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- BIRYANI PAIRING SELECTOR -->
+  <section class="section-padding" id="pairings" style="background: rgba(245, 158, 11, 0.02);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Complete The Taste</span>
+        <h2 class="section-title">THE PERFECT PAIRINGS</h2>
+        <p style="color: var(--text-muted);">Karachi biryani is best enjoyed with traditional accompaniments.</p>
+      </div>
+
+      <div class="pairing-box reveal">
+        <div class="pairing-options">
+          <div class="pairing-opt active" data-img="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80">
+            <h4>Mint Zeera Raita</h4>
+            <p>Cooling yogurt infused with freshly ground roasted cumin, mint leaves, and light herbs.</p>
+          </div>
+          <div class="pairing-opt" data-img="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80">
+            <h4>Kachumber Salad</h4>
+            <p>Diced crunchy cucumbers, onions, ripe tomatoes, lemon juice, and green chilies.</p>
+          </div>
+          <div class="pairing-opt" data-img="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80">
+            <h4>Shahi Zafrani Zarda</h4>
+            <p>Sweet aromatic rice studded with khoya, dry fruits, and silver leaf for a complete feast finish.</p>
+          </div>
+        </div>
+
+        <div class="pairing-preview">
+          <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80" id="pairingImg" alt="Biryani Pairing" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES / WHY CHOOSE US -->
+  <section class="section-padding" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">The Al Madina Standard</span>
+        <h2 class="section-title">WHY OUR BIRYANI HITS DIFFERENT</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🌿</div>
+          <h3 class="feature-title">Pure Spices</h3>
+          <p class="feature-desc">Ground fresh in-house to maintain authentic flavor profiles and aroma in every batch.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🍚</div>
+          <h3 class="feature-title">Long-Grain Basmati</h3>
+          <p class="feature-desc">Aged premium basmati rice cooked to non-sticky, fluff perfection.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔥</div>
+          <h3 class="feature-title">Slow Dum Process</h3>
+          <p class="feature-desc">Sealed steam cooking that locks moisture into juicy meats and tender potatoes.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">❤️</div>
+          <h3 class="feature-title">Karachi Heritage</h3>
+          <p class="feature-desc">Honoring traditional Karachi food culture with rich, spicy, and satisfying meals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section-padding" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Visual Feast</span>
+        <h2 class="section-title">FOOD GALLERY</h2>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Biryani Pot" />
+          <div class="gallery-overlay">VIEW DISH</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=600&q=80" alt="Degi Beef Biryani" />
+          <div class="gallery-overlay">VIEW DISH</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1645177628172-a94c1f96e6db?auto=format&fit=crop&w=600&q=80" alt="Yakhni Pulao" />
+          <div class="gallery-overlay">VIEW DISH</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80" alt="Seekh Kebabs" />
+          <div class="gallery-overlay">VIEW DISH</div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80" alt="Karahi Curry" />
+          <div class="gallery-overlay">VIEW DISH</div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-btn lightbox-close" id="lbClose">&times;</button>
+    <button class="lightbox-btn lightbox-prev" id="lbPrev">&#10094;</button>
+    <img src="" alt="Enlarged Dish View" class="lightbox-img" id="lbImg" />
+    <button class="lightbox-btn lightbox-next" id="lbNext">&#10095;</button>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Our Story</span>
+        <h2 class="section-title">WELCOME TO AL MADINA BIRYANI HOUSE</h2>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;" class="reveal">
+        <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.8;">
+          Located in the heart of Karachi, Pakistan, Al Madina Biryani House is committed to serving authentic, aromatic, and rich Karachi-style Biryani alongside classic Desi delicacies.
+        </p>
+        <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.8;">
+          Every serving is a result of selected spices, quality rice, and passion for Pakistani culinary tradition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Got Questions?</span>
+        <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+      </div>
+
+      <div class="faq-container reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What items are featured at Al Madina Biryani House?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            We specialize in Chicken Biryani, Beef Biryani, Yakhni Pulao, Kebabs, Chicken Karahi, and traditional desserts like Zafrani Kheer.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How can I place an order or inquiry?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            You can call or WhatsApp us directly at +92 307 2994829 or submit your details in the contact form below.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Where is Al Madina Biryani House located?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            We are located in Karachi, Pakistan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION & FORM -->
+  <section class="section-padding" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div>
+            <span class="section-subtitle">Direct Contact</span>
+            <h2 class="section-title" style="font-size: 2.3rem; margin-bottom: 24px;">GET IN TOUCH</h2>
+
+            <div class="contact-card">
+              <h4>LOCATION</h4>
+              <p>Karachi, Pakistan</p>
+            </div>
+
+            <div class="contact-card">
+              <h4>PHONE</h4>
+              <p><a href="tel:+923072994829">0307 2994829</a></p>
+            </div>
+
+            <div class="contact-card">
+              <h4>WHATSAPP</h4>
+              <p><a href="https://wa.me/923072994829" target="_blank">+92 307 2994829</a></p>
+            </div>
+          </div>
+
+          <div style="padding-top: 20px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem;">
+            Serving Authentic Karachi Taste with Passion.
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; color: var(--cream);">ORDER / INQUIRY FORM</h3>
+          
+          <div class="form-alert" id="formAlert"></div>
+
+          <form id="inquiryForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="03XXXXXXXXX" required />
+            </div>
+
+            <div class="form-group">
+              <label for="interest">Dish Interest</label>
+              <select id="interest" class="form-control">
+                <option value="Chicken Biryani">Chicken Biryani</option>
+                <option value="Beef Biryani">Beef Biryani</option>
+                <option value="Yakhni Pulao">Yakhni Pulao</option>
+                <option value="Seekh Kebab / BBQ">Seekh Kebab / BBQ</option>
+                <option value="Chicken Karahi">Chicken Karahi</option>
+                <option value="Dessert">Dessert</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message / Details</label>
+              <textarea id="message" class="form-control" placeholder="Mention your requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo">AL MADINA <span>BIRYANI</span> 🍛</a>
+          <p>Karachi's Favorite Authentic Biryani Destination.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>QUICK LINKS</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>OUR DISHES</h4>
+          <ul class="footer-links">
+            <li><a href="#menu">Chicken Biryani</a></li>
+            <li><a href="#menu">Beef Biryani</a></li>
+            <li><a href="#menu">Yakhni Pulao</a></li>
+            <li><a href="#menu">Seekh Kebabs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>CONTACT US</h4>
+          <ul class="footer-links">
+            <li>Karachi, Pakistan</li>
+            <li>Phone: <a href="tel:+923072994829" style="color: var(--cream);">0307 2994829</a></li>
+            <li>WhatsApp: <a href="https://wa.me/923072994829" target="_blank" style="color: var(--cream);">+92 307 2994829</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="currentYear"></span> Al Madina Biryani House. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <div class="back-to-top" id="backToTop">&#8593;</div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dynamic Footer Year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      // Navbar Sticky & Scroll Active
+      const navbar = document.getElementById('navbar');
+      const backToTop = document.getElementById('backToTop');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const sections = document.querySelectorAll('section');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+          backToTop.classList.add('show');
+        } else {
+          navbar.classList.remove('scrolled');
+          backToTop.classList.remove('show');
+        }
+
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          if (pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // Mobile Hamburger
+      const hamburger = document.getElementById('hamburger');
+      const navLinksMenu = document.getElementById('navLinks');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinksMenu.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinksMenu.classList.remove('active');
+        });
+      });
+
+      // Scroll Reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            el.classList.add('active');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll();
+
+      // Menu Filtering
+      const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+      const menuCards = document.querySelectorAll('.menu-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          menuCards.forEach(card => {
+            const categories = card.getAttribute('data-category');
+            if (filter === 'all' || categories.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Pairing Selector
+      const pairingOpts = document.querySelectorAll('.pairing-opt');
+      const pairingImg = document.getElementById('pairingImg');
+
+      pairingOpts.forEach(opt => {
+        opt.addEventListener('click', () => {
+          pairingOpts.forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+          pairingImg.src = opt.getAttribute('data-img');
+        });
+      });
+
+      // Lightbox
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImg');
+      const lbClose = document.getElementById('lbClose');
+      const lbPrev = document.getElementById('lbPrev');
+      const lbNext = document.getElementById('lbNext');
+
+      let currentGIndex = 0;
+
+      const openLb = (idx) => {
+        currentGIndex = idx;
+        lbImg.src = galleryItems[currentGIndex].querySelector('img').src;
+        lightbox.classList.add('active');
+      };
+
+      galleryItems.forEach((item, idx) => {
+        item.addEventListener('click', () => openLb(idx));
+      });
+
+      lbClose.addEventListener('click', () => lightbox.classList.remove('active'));
+      lbPrev.addEventListener('click', () => {
+        currentGIndex = (currentGIndex - 1 + galleryItems.length) % galleryItems.length;
+        openLb(currentGIndex);
+      });
+      lbNext.addEventListener('click', () => {
+        currentGIndex = (currentGIndex + 1) % galleryItems.length;
+        openLb(currentGIndex);
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') lightbox.classList.remove('active');
+        if (e.key === 'ArrowLeft') lbPrev.click();
+        if (e.key === 'ArrowRight') lbNext.click();
+      });
+
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isOpen) item.classList.add('active');
+        });
+      });
+
+      // Form Validation
+      const form = document.getElementById('inquiryForm');
+      const formAlert = document.getElementById('formAlert');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        formAlert.className = 'form-alert success';
+        formAlert.textContent = 'Thank you for contacting Al Madina Biryani House! We will get back to you shortly.';
+        form.reset();
+      });
+
+      // Back to top
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
